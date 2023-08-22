@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mafalda</title>
+        <style>
+            body {
+                font-family: Poppins;
+                background: radial-gradient(
+                    circle at 10% 20%,
+                    rgb(255, 246, 236) 39.5%,
+                    rgba(100, 46, 122, 0.23) 100.2%
+                );
+            }
+            #card {
+                width: 540px;
+                align-items: center;
+                padding: 30px 50px 50px 50px;
+                margin: 50px auto;
+                border-radius: 50px;
+                background: #fff;
+                box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+            }
+            h1 {
+                text-align: center;
+                color: #af98bd;
+                text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+                font-size: 45px;
+                font-weight: 600;
+                margin: auto 0;
+            }
+            h2 {
+                color: #7a7a7a;
+                text-align: center;
+                font-size: 15px;
+                font-style: italic;
+                font-weight: 300;
+                line-height: 18px;
+                margin: 0 0 20px 0;
+            }
+            h3 {
+                text-align: center;
+                color: #af98bd;
+                font-size: 18px;
+                font-weight: 600;
+                margin: 10px 0;
+            }
+            img {
+                width: 500px;
+                height: 250px;
+                margin: 0 auto;
+                display: block;
+            }
+            #content {
+                padding: 20px 0px;
+            }
+            p {
+                width: 500px;
+                margin: 0 auto;
+                display: block;
+                padding: 0px;
+                color: #383838;
+                line-height: 22px;
+                text-align: justify;
+                font-size: 15px;
+            }
+            strong {
+                color: #af98bd;
+            }
+            .quote {
+                font-weight: 500;
+            }
+            hr {
+                border: none;
+            }
+            a {
+                text-decoration: none;
+            }
+            #opciones {
+                width: 70%;
+                display: flex;
+                margin: 0 auto;
+            }
+            button {
+                color: #af98bd;
+                font-family: Poppins;
+                font-size: 16px;
+                border-radius: 25px;
+                margin: 0 auto;
+                display: block;
+                background-color: #fff;
+                border: 1px solid #af98bd;
+                line-height: 18px;
+                padding: 10px 20px;
+                text-decoration: none;
+                transition: all 200ms ease;
+                cursor: pointer;
+            }
+            button:hover {
+                color: #fff;
+                background: #af98bd;
+                box-shadow: 0px 0px 15px 0px rgba(135, 102, 141, 0.623);
+            }
+
+            /*CSS modal*/
+            .modal {
+                display: none;
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+
+            .modal-content {
+                background-color: #fefefe;
+                margin: 10% auto;
+                padding: 30px;
+                border: 1px solid #888;
+                border-radius: 20px;
+                width: 400px;
+            }
+
+            input {
+                font-family: Poppins;
+                font-size: 16px;
+                border-radius: 25px;
+                margin: 20px auto;
+                display: block;
+                background-color: #fff;
+                border: 1px solid #af98bd;
+                padding: 10px 20px;
+                text-decoration: none;
+                text-align: center;
+            }
+
+            #optionsModal {
+                width: 65%;
+                display: flex;
+                margin: 0 auto;
+            }
+            .modalBtn {
+                width: 116px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="card">
+            <h1>Mafalda</h1>
+            <h2>What if instead of gliding so much we flew a little higher?</h2>
+
+            <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/094/222/original/mafalda.png?1692662056"
+                alt="Mafalda"
+            />
+            <div id="content">
+                <p>
+                    <strong>Mafalda</strong> is the name of an Argentine
+                    newspaper strip created by the cartoonist Quino from 1964 to
+                    1973, starring the girl of the same name,
+                    <span class="quote"
+                        >«a mirror of the Argentine middle class and progressive
+                        youth»</span
+                    >, who is concerned about humanity and world peace and
+                    rebels against the world bequeathed to her by her elders.
+                    and rebels against the world bequeathed by her elders.
+                </p>
+                <hr />
+                <p>
+                    Mafalda was born on March 15, 1960 or March 15, 1962, into a
+                    typical Argentine middle-class family of the 1960s.
+                    Enthusiastic about The Beatles, the Mad Bird and pancakes,
+                    she hated soup
+                    <em
+                        >(according to Quino himself, Mafalda's hatred of soup
+                        was a metaphor for the militarism and political
+                        imposition of the time)</em
+                    >. She frequently makes adults uncomfortable with her
+                    questioning of the socially established and her questions
+                    about the political management of the world. <br />
+                    She imagines herself studying languages and working as an
+                    interpreter at the United Nations to contribute to world
+                    peace.
+                </p>
+            </div>
+            <div id="opciones">
+                <a href="https://www.quino.com.ar/" target="_blank">
+                    <button>About the author</button>
+                </a>
+                <button id="interaccion">Interact with me</button>
+            </div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <h3>What is your name?</h3>
+                <input id="name" type="text" placeholder="Enter your name" />
+                <div id="optionsModal">
+                    <button id="close" class="modalBtn">Cancel</button>
+                    <button id="send" class="modalBtn">Send</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var modal = document.getElementById("myModal");
+            var btn = document.getElementById("interaccion");
+            var interactionBtn = document.getElementById("send");
+
+            var closeBtn = document.getElementById("close");
+
+            btn.onclick = function () {
+                modal.style.display = "block";
+            };
+
+            closeBtn.onclick = function () {
+                modal.style.display = "none";
+            };
+
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            };
+
+            interactionBtn.onclick = function () {
+                validationName();
+            };
+
+            function updateHeading(newHeading) {
+                let h3 = document.querySelector("h3");
+                h3.innerHTML = newHeading;
+                var inputHide = document.getElementById("name");
+                inputHide.style.display = "none";
+                interactionBtn.style.display = "none";
+                let newBtnName = document.querySelector("#close");
+                newBtnName.innerHTML = "Accept";
+            }
+            function validationName() {
+                let name = document.getElementById("name").value;
+                if (!name) {
+                    alert("No name");
+
+                    updateHeading(
+                        `Uhm, I don't know your name, but <br> nice to meet you anyway!`
+                    );
+                    window.prompt(
+                        "In any case, thank you for visiting this page!",
+                        "Sure"
+                    );
+                } else {
+                    updateHeading(`Hi ${name}! nice to meet you!`);
+                }
+            }
+        </script>
+    </body>
+</html>
